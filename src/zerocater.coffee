@@ -10,9 +10,14 @@
 #   HUBOT_ZEROCATER_CATERING_TIME - In the format of HH:MM
 #
 # Commands:
-#   hubot zerocater - Pulls your catering menu for today
-#   hubot zerocater yesterday - Yesterday's catering menu
-#   hubot zerocater tomorrow - Tomorrow's catering menu
+#   hubot zerocater
+#   hubot what's for lunch - Pulls your catering menu for today
+#
+#   hubot zerocater yesterday
+#   hubot what's for lunch yesterday - Yesterday's catering menu
+#
+#   hubot zerocater tomorrow
+#   hubot what's for lunch tomorrow - Tomorrow's catering menu
 #
 # Author:
 #   jonursenbach
@@ -21,7 +26,7 @@ moment = require 'moment'
 cheerio = require 'cheerio'
 
 module.exports = (robot) =>
-  robot.respond /zerocater( .*)?/i, (msg) ->
+  robot.respond /(zerocater|what['’]s for lunch)( .*)?/i, (msg) ->
     date = if msg.match[1] then msg.match[1].trim() else ''
     if date isnt undefined && date != ''
       date = getTimestamp(date)
