@@ -58,7 +58,7 @@ getCatering = (msg, date) ->
   if date is false
     return msg.send 'I don\'t know when that is.'
 
-  return msg.send "You need to set env.HUBOT_FORECAST_API_KEY to get weather data" if not process.env.HUBOT_ZEROCATER_MENU_URL
+  return msg.send "You need to set env.HUBOT_ZEROCATER_MENU_URL to get food data" if not process.env.HUBOT_ZEROCATER_MENU_URL
 
   msg.http(process.env.HUBOT_ZEROCATER_MENU_URL)
     .get() (err, res, body) ->
