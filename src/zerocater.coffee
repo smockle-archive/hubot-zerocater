@@ -26,8 +26,10 @@ moment = require 'moment'
 cheerio = require 'cheerio'
 
 module.exports = (robot) =>
-  robot.respond /(zerocater|what['’]s for lunch)( .*)?/i, (msg) ->
-    date = if msg.match[1] then msg.match[1].trim() else ''
+  robot.respond /(zerocater|what['’]?s for lunch)( .*)?/i, (msg) ->
+    date = msg.match[0].trim().split(" ")
+    date = date[date.length-1]
+    date = if /(today|tomorrow|yesterday)/i.test(date) then date else undefined
     if date isnt undefined && date != ''
       date = getTimestamp(date)
       if date is false
@@ -55,6 +57,8 @@ getTimestamp = (date) ->
 getCatering = (msg, date) ->
   if date is false
     return msg.send 'I don\'t know when that is.'
+
+  return msg.send "You need to set env.HUBOT_FORECAST_API_KEY to get weather data" if not process.env.HUBOT_ZEROCATER_MENU_URL
 
   msg.http(process.env.HUBOT_ZEROCATER_MENU_URL)
     .get() (err, res, body) ->
