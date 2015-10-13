@@ -10,13 +10,8 @@
 #   HUBOT_ZEROCATER_CATERING_TIME - In the format of HH:MM
 #
 # Commands:
-#   hubot zerocater
 #   hubot what's for lunch - Pulls your catering menu for today
-#
-#   hubot zerocater yesterday
 #   hubot what's for lunch yesterday - Yesterday's catering menu
-#
-#   hubot zerocater tomorrow
 #   hubot what's for lunch tomorrow - Tomorrow's catering menu
 #
 # Author:
