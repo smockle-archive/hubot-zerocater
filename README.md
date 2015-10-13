@@ -5,9 +5,9 @@ catering to your office today.
 
 ### Usage
 
-    hubot zerocater - Pulls your catering menu for today
-    hubot zerocater yesterday - Yesterday's catering menu
-    hubot zerocater tomorrow - Tomorrow's catering menu
+    hubot what's for lunch - Pulls your catering menu for today
+    hubot what's for lunch yesterday - Yesterday's catering menu
+    hubot what's for lunch tomorrow - Tomorrow's catering menu
 
 ### Installation
 1. Edit `package.json` and add `hubot-zerocater` as a dependency.
