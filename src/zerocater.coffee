@@ -103,4 +103,4 @@ getCatering = (msg, date) ->
       if (!cateringFound)
         activities = [ 'dancing in a salsa competition', 'hosting a cooking show', 'on a walkabout', 'trying to destroy the One Ring', 'taking a nap', 'out of office', 'finally writing that novel', 'catching up on Game of Thrones', 'busy working', 'having an existential crisis', 'filling an island with dinosaurs', 'translating Vogon poetry', 'impersonating Bob Ross', 'reticulating splines', 'off to lunch' ]
         activity = activities[Math.floor(Math.random() * (activities.length - 1))] || 'unavailable'
-        msg.send "I’m #{activity}. While I’m out, lunch menus are here: #{HUBOT_ZEROCATER_MENU_URL}"
+        msg.send "I’m #{activity}. While I’m out, lunch menus are here: #{process.env.HUBOT_ZEROCATER_MENU_URL}"
